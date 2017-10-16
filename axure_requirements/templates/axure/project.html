@@ -1,0 +1,10 @@
+<html>
+<head>projects</head>
+<body>
+{% for each_project in project_list%}
+    <div>
+        <a href="{{each_project[1]}}">'{{each_project[0]}}'</a>
+    </div>
+{% end%}
+</body>
+</html>

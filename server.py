@@ -3,6 +3,7 @@
 
 import tornado.ioloop
 import tornado.web
+from axure_requirements.handlers.urls import urls
 
 class TestHandler(tornado.web.RequestHandler):
     
@@ -11,7 +12,11 @@ class TestHandler(tornado.web.RequestHandler):
 
 
 def make_app():
-    return tornado.web.Application([(r"/", TestHandler)])
+    settings = {
+        'static_path': 'axure_requirements/static',
+        'template_path': 'axure_requirements/templates',
+    }
+    return tornado.web.Application(urls, **settings)
 
 
 if __name__ == "__main__":
