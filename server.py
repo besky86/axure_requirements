@@ -15,6 +15,7 @@ def make_app():
     settings = {
         'static_path': 'axure_requirements/static',
         'template_path': 'axure_requirements/templates',
+        'debug': True,
     }
     return tornado.web.Application(urls, **settings)
 
